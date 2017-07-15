@@ -1,0 +1,133 @@
+Discussion questions:
+
+Runtime:
+
+1) Question: When calculating the Big O notation for a particular algorithm,
+   it’s necessary to consider the length of time it takes for the algorithm
+   to run as the algorithm’s workload approaches infinity. You can think of
+   the workload as the number of tasks required to complete a job. What
+   determines the workload of figuring out whether your box of animal crackers
+   contains an elephant?
+
+   Answer: Determining whether or not my box of animal crackers contains an
+   elephant would have O(n) runtime.  In order to figure this out, you must
+   think of the worst case scenario that would cause the longest possible runtime.
+   In this case, the worst possible scenario would be that there are no
+   elephants in the box, and I have to examine each cracker in the box to 
+   determine whether or not an elephant exists.  This means that the runtime
+   would increase linearly depending upon how many crackers were in the box.
+
+2) Question: Order the following runtimes in descending order of efficiency
+   (that is, fastest runtimes first, slowest last) as n approaches infinity:
+
+   Answer: O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n)
+
+Stacks and Queues:
+
+1) Question: In the following cases, would a stack or queue be a more appropriate
+   data structure?
+
+   Answer:
+      
+      1) The process of loading and unloading pallets onto a flatbed truck
+         - Stack
+
+      2) Putting bottle caps on bottles of beer as they roll down an assembly line
+         - Queue
+
+      3) Calculating the solution to this mathematical expression:
+         2 + (7 * 4) - (3 / 2)
+         - Stack
+
+2) Question: Describe two more situations where a queue would be an appropriate
+   data structure.
+
+   Answer: 
+
+      1) A to do list when you want to ensure you complete tasks in order of 
+         when you added them to the list.
+
+      2) When you are shipping orders to different customers and you want to
+         ensure they arrive in order according to when the customer placed the 
+         order.
+
+3) Question: Describe two more situations where a stack would be an appropriate
+   data structure.
+
+   Answer:
+
+      1) Back buttons in a browser must track the most recent pages you've
+         visited.  When you hit back, the browser should take you to the
+         page at the top of the stack, for the most recent page - not the
+         bottom of the stack for the first page visited.
+
+       2) Loading and unloading furniture from a moving van.
+
+Linked Lists:
+
+1) Question: Given the linked list below, which are the nodes? What is the data
+   for each node? Where is the head? Where is the tail? (Please be as specific
+   as possible — exactly which parts of the diagram correspond to each part?
+   Arrows? Boxes? Text?)
+
+   Answer: The nodes in the linked list are the rectangular structures
+   containing 2 smaller boxes with data in one and 'next' in the other.
+   The data for the head is 'Apple', the next node's data is 'Berry', the 
+   third node's data is 'Cherry'.
+   The head is an attribute of the linked list structure that currently points
+   to the Apple node.
+   The tail is the 3rd rectangular node containing data 'Cherry'.
+
+2) Question: What’s the difference between doubly- and singly-linked lists?
+
+   Answer: In a singly linked list, each node has a data attribute and a 'next'
+   attribute that indicates which node in the list comes next.  In a doubly
+   linked list, each node has the same attributes as those in a singly linked
+   list, but also has a 'previous' attribute indicating the previous node.
+   While a singly linked list can only look forward, a doubly linked list can
+   look both backward and forward.
+
+3) Question: Why is it faster to append to a linked list if we keep track of the
+   tail as an attribute?
+
+   Answer: If you do not keep track of a linked list's tail as an attribute,
+   you must check each node in the list starting at the head until you get to
+   the last node where the 'next' attribute points to None.  If you keep track
+   of the tail as an attribute of the linked list, you can quickly append
+   by changing the 'next' attribute of the current tail to point to the new
+   tail node, then reassign the tail attribute of the linked list to point to
+   the new tail node.
+
+Trees:
+
+1) Question: Given the tree above, in what order would a Breadth First Search
+   (BFS) algorithm visit each node until finding burritos (starting at food)?
+   (Assume nodes are enqueued in left-to-right order.) Just list the order of
+   nodes visited; no need to recreate the state of the algorithm data in your
+   answer.
+
+   Answer: food, Italian, Indian, Mexican, lasagna, pizza, tikka masala, saag,
+   burritos
+
+2) Question: Given the tree above, in what order would a Depth First Search
+   (DFS) algorithm visit each node until finding Chicago-style (starting at food)?
+   (Assume nodes are pushed in left-to-right order.) Just list the order of nodes
+   visited; no need to recreate the state of the algorithm data in your answer.
+
+   Answer: food, Italian, lasagna, pizza, thin crust, Chicago-style
+
+3) Question: How is a binary search tree different from other trees?
+
+   Answer: In a binary search tree, each parent node has only two children.
+   The root node of the binary search tree should be the median value of data.
+   The child nodes of the root will be the median value of the remaining nodes
+   less than the root on the left, and the median value of the remaining nodes
+   greater than the root on the right.  The binary tree will continue in this
+   pattern until all nodes are exhausted and there are no more to add.  Searching
+   for a node in a binary search tree will have O(log n) run time because of its
+   organizational structure.  Each progression down the tree you will cut the
+   workload of the program in half.  Other trees have O(n) runtime to search for
+   a node.
+
+
+
